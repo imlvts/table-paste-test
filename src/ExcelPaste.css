@@ -1,0 +1,40 @@
+.excel-table-rows .table-row {
+  white-space: nowrap;
+}
+
+/* TODO: this should be done using tables and border-collapse */
+.excel-table-rows .table-row:not(:first-child) input[type="text"],
+.excel-table-rows .table-row:not(:first-child) .rc-input-number {
+  border-top: 0px none;
+}
+
+.excel-table-rows input[type="text"]:not(:first-child),
+.excel-table-rows .rc-input-number:not(:first-child) {
+  border-left: 0px none;
+}
+
+.excel-table-rows input[type="text"] {
+  box-sizing: border-box;
+  border-radius: 0;
+  border: 1px solid #666;
+  height: 26px;
+  width: 150px;
+  padding-left: 4px;
+  color: black;
+}
+
+.excel-table-rows .rc-input-number {
+  width: 120px;
+  box-sizing: border-box;
+  height: 26px;
+  border-radius: 0;
+  border: 1px solid #666;
+  vertical-align: top;
+}
+
+.excel-table-rows .rc-input-number-input {
+  text-align: right;
+  box-sizing: border-box;
+  padding-right: 4px;
+  color: black;
+}

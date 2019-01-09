@@ -1,0 +1,36 @@
+{
+  "license": "UNLICENSED",
+  "repository": "-",
+  "description": "automation front-end",
+  "dependencies": {
+    "@types/bluebird": "^3.5.25",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "bluebird": "^3.5.3",
+    "csv-parse": "^4.3.0",
+    "object-assign-shim": "^1.0.0",
+    "rc-input-number": "^4.3.7",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.2.1",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^1.0.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "typescript": "^3.2.2"
+  },
+  "scripts": {
+    "build": "webpack --mode=production",
+    "dev-build": "webpack --mode=development"
+  },
+  "devDependencies": {}
+}
