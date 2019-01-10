@@ -4,6 +4,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const outputPath = __dirname + "/build";
+
 module.exports = {
   performance: {
     // Ignore warnings about vendor bundle being too big (of course it is)
@@ -16,7 +18,7 @@ module.exports = {
   },
   output: {
     filename: "[name].[chunkhash:8].js",
-    path: __dirname + "/build"
+    path: outputPath,
   },
 
   // Enable sourcemaps for debugging webpack's output.
@@ -86,7 +88,7 @@ module.exports = {
 
   plugins: [
     // Remove previous build
-    new CleanWebpackPlugin(['build']),
+    new CleanWebpackPlugin([outputPath]),
     // Copy static files
     new CopyWebpackPlugin([{from: 'static', to: '.'}], {}),
     // Insert js/css into html template
