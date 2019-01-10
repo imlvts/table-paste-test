@@ -68,7 +68,18 @@ module.exports = {
           },
           'css-loader',
         ]
-      }
+      },
+      // Allow less stylesheets
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          'less-loader',
+        ]
+      },
     ]
   },
 
@@ -83,7 +94,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].[chunkhash:8].css",
       chunkFilename: "[name].[chunkhash:8].css"
-    })
+    }),
   ],
   // When importing a module whose path matches one of the following, just
   // assume a corresponding global variable exists and use that instead.
