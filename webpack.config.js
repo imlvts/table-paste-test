@@ -9,9 +9,10 @@ module.exports = {
     // Ignore warnings about vendor bundle being too big (of course it is)
     assetFilter: (name) => !/^vendor\./.test(name),
   },
-  // Specify several entry points if necessary
   entry: {
-    main: "./src/index.tsx",
+    index: "./src/index.tsx",
+    // Specify several entry points if necessary
+    // foo: "./src/foo.tsx",
   },
   output: {
     filename: "[name].[chunkhash:8].js",
@@ -89,7 +90,17 @@ module.exports = {
     // Copy static files
     new CopyWebpackPlugin([{from: 'static', to: '.'}], {}),
     // Insert js/css into html template
-    new HtmlWebpackPlugin({template: 'src/index.html'}),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      filename: 'index.html',
+      chunks: ['vendor', 'index'],
+    }),
+    // To generate more html files, specify multiple instances of this plugin
+    //   new HtmlWebpackPlugin({
+    //     template: 'src/index.html',
+    //     filename: 'foo.html',
+    //     chunks: ['vendor', 'foo'],
+    //   }),
     // Split css into separate files
     new MiniCssExtractPlugin({
       filename: "[name].[chunkhash:8].css",
